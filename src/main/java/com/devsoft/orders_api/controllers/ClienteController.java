@@ -1,10 +1,7 @@
 package com.devsoft.orders_api.controllers;
 
-
-import com.devsoft.orders_api.dto.CategoriaDTO;
-import com.devsoft.orders_api.dto.ClienteDTO;
-import com.devsoft.orders_api.interfaces.ICategoriaService;
-import com.devsoft.orders_api.interfaces.IClienteService;
+import com.devsoft.orders_api.entities.Cliente;
+import com.devsoft.orders_api.services.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -18,13 +15,12 @@ import java.util.List;
 @CrossOrigin
 @RequestMapping("/api")
 public class ClienteController {
-
     @Autowired
-    private IClienteService clienteService;
+    private ClienteService clienteService;
 
-    @GetMapping("/categorias")
+    @GetMapping("/clientes")
     public ResponseEntity<?> getAll(){
-        List<ClienteDTO> clienteDTOList = clienteService.findAll();
-        return ResponseEntity.ok(clienteDTOList);
+        List<Cliente> clientes = clienteService.findAll();
+        return ResponseEntity.ok(clientes);
     }
 }

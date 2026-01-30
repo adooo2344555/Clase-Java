@@ -16,6 +16,6 @@ public class DetalleOrdenDTO {
     private Long id;
     private MenuDTO menuDTO;
     private Integer cantidad;
-    private BigDecimal preio;
+    private BigDecimal precio;
     private BigDecimal subTotal;
 }

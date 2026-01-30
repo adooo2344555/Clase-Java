@@ -16,7 +16,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @Entity
 @Table(name = "menus", schema = "public", catalog = "orders")
-public class Menu  implements Serializable {
+public class  Menu  implements Serializable {
     @Serial
     private static  final long serialVersionUID = 1L;
     @Id

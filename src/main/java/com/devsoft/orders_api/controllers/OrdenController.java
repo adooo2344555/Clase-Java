@@ -30,7 +30,7 @@ public class OrdenController {
     }
 
     //enpoint para listar todas las ordenes por estado
-    @GetMapping("/ordenes/estados/{estado}")
+    @GetMapping("/ordenes/estado/{estado}")
     public ResponseEntity<?> getAllEstado(@PathVariable EstadoOrden estado){
         List<OrdenDTO> lista = ordenService.findByEstado(estado);
         return ResponseEntity.ok(lista);

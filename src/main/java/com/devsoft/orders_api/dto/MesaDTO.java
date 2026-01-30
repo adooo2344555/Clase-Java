@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class MesaDTO {
-    private Long id;
+    private  Long id;
     private int numero;
-    private  String ubicacion;
+    private  String Ubicacion;
 }

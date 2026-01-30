@@ -36,7 +36,7 @@ public class OrdenMapper {
         dto.setUsuarioDTO(new UsuarioDTO(
                 orden.getUsuario().getId(),
                 orden.getUsuario().getNombre(),
-                orden.getUsuario().getUsuario(),
+                orden.getUsuario().getUsername(),
                 orden.getUsuario().isActivo(),
                 new RoleDTO(
                         orden.getUsuario().getRole().getId(),
@@ -49,7 +49,7 @@ public class OrdenMapper {
                 DetalleOrdenDTO doDTO = new DetalleOrdenDTO();
                 doDTO.setId(d.getId());
                 doDTO.setCantidad(d.getCantidad());
-                doDTO.setPreio(d.getPrecio());
+                doDTO.setPrecio(d.getPrecio());
                 doDTO.setSubTotal(BigDecimal.valueOf(d.getCantidad()).multiply(d.getPrecio())
                                         .setScale(2, RoundingMode.HALF_UP));
                 doDTO.setMenuDTO(new MenuDTO(
