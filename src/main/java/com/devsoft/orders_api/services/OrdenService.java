@@ -98,7 +98,7 @@ public class OrdenService implements IOrdenService {
             Menu menu = menuOpt.get();
             DetalleOrden detalleOrden = new DetalleOrden();
             detalleOrden.setCantidad(detalleDTO.getCantidad());
-            detalleOrden.setPrecio(detalleDTO.getPreio());
+            detalleOrden.setPrecio(detalleDTO.getPrecio());
             detalleOrden.setSubtotal(detalleDTO.getSubTotal());
             detalleOrden.setMenu(menu);
             detalleOrden.setOrden(orden);

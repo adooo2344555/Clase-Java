@@ -86,7 +86,6 @@ public class CategoriaController {
             response.put("message", "La categoria con ID: ".concat(id.toString()).concat(" no existe en la base de datos"));
             return new ResponseEntity<Map<String,Object>>(response, HttpStatus.CONFLICT);
         }
-
         CategoriaDTO catUpdated = null;
         try {
             CategoriaDTO catExiste = categoriaService.findByNombre(dto.getNombre());
@@ -94,16 +93,13 @@ public class CategoriaController {
                 response.put("message", "Ya existe una categoria con ese nombre en la base de datos, digite otro");
                 return new ResponseEntity<Map<String,Object>>(response, HttpStatus.CONFLICT);
             }
-
             catActual.setNombre(dto.getNombre());
             catUpdated = categoriaService.save(catActual);
 
         } catch (DataAccessException e) {
             response.put("error", "Error al actualizar un registro, intente de nuevo");
-            response.put("error", e.getMessage());
             return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
         }
-
         response.put("message", "Categoria actualizada correctamente...!");
         response.put("categoria", catUpdated);
         return new ResponseEntity<>(response, HttpStatus.ACCEPTED);
